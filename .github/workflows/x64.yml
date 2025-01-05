@@ -45,7 +45,6 @@ jobs:
         run: |
           echo -e 'src-git helloworld https://github.com/fw876/helloworld;master' >> ./feeds.conf.default
           echo -e 'src-git lienolpackage https://github.com/Lienol/openwrt-package' >> ./feeds.conf.default
-          echo -e 'src-git luci https://github.com/openwrt/luci.git' >> ./feeds.conf.default
           echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
           echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
           ./scripts/feeds update -a
