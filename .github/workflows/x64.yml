@@ -241,7 +241,7 @@ jobs:
           cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/
 
       - name: Deliver firmware
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: X64_firmware
           path: ./artifact/
