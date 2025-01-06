@@ -30,6 +30,12 @@ jobs:
         run: |
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
           sudo -E apt-mark hold grub-efi-amd64-signed
+          sudo bash -c 'cat > /etc/apt/sources.list <<EOF
+          deb http://archive.ubuntu.com/ubuntu focal main restricted universe multiverse
+          deb http://archive.ubuntu.com/ubuntu focal-updates main restricted universe multiverse
+          deb http://security.ubuntu.com/ubuntu focal-security main restricted universe multiverse
+          deb http://archive.canonical.com/ubuntu focal partner
+          EOF'
           sudo -E apt update
           sudo -E apt -y purge azure-cli* docker* llvm* firefox google* dotnet* powershell* mysql* php* dotnet* snap*
           sudo -E apt -y full-upgrade
